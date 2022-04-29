@@ -34,7 +34,7 @@
 import { IonApp, IonContent, IonIcon, IonItem, IonLabel, IonList, IonListHeader, IonMenu, IonMenuToggle, IonNote, IonRouterOutlet, IonSplitPane } from '@ionic/vue';
 import { defineComponent, ref } from 'vue';
 import { useRoute } from 'vue-router';
-import { cash,settingsSharp,pencilSharp,timeSharp,codeOutline,archiveOutline, archiveSharp, bookmarkOutline, bookmarkSharp, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp,calculatorOutline } from 'ionicons/icons';
+import { stopwatch,alarm,cash,settingsSharp,pencilSharp,timeSharp,codeOutline,archiveOutline, archiveSharp, bookmarkOutline, bookmarkSharp, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp,calculatorOutline } from 'ionicons/icons';
 
 export default defineComponent({
   name: 'App',
@@ -54,8 +54,15 @@ export default defineComponent({
   },
   data(){
     return{
-      current_time : "12:34"
+      current_time : ""
     }
+  },
+  mounted(){
+    setInterval(()=>{
+      const d = new Date();
+
+      this.current_time = d.toLocaleString()
+    },1000)
   },
   setup() {
     const selectedIndex = ref(0);
@@ -83,6 +90,18 @@ export default defineComponent({
         url: '/tool/time',
         iosIcon: timeSharp,
         mdIcon: timeSharp
+      },
+      {
+        title: 'Stopwatch',
+        url: '/tool/stopwatch',
+        iosIcon: stopwatch,
+        mdIcon: stopwatch
+      },
+      {
+        title: 'Timer',
+        url: '/tool/timer',
+        iosIcon: alarm,
+        mdIcon: alarm
       },
       {
         title: 'My Notes',
