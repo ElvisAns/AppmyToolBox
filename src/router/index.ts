@@ -8,7 +8,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/tool/:id',
-    component: () => import ('../views/FolderPage.vue')
+    component: () => import ('../views/ToolBox.vue')
   }
 ]
 
