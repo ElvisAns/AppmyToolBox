@@ -2,7 +2,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'io.ionic.starter',
-  appName: 'Atalaku Xpress',
+  appName: 'Tiny ToolBox',
   webDir: 'dist',
   bundledWebRuntime: false
 };

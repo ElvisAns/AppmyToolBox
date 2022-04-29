@@ -4,8 +4,8 @@
       <ion-menu content-id="main-content" type="overlay">
         <ion-content>
           <ion-list id="inbox-list">
-            <ion-list-header>Inbox</ion-list-header>
-            <ion-note>hi@ionicframework.com</ion-note>
+            <ion-list-header>My ToolBox</ion-list-header>
+            <ion-note>{{current_time}}</ion-note>
   
             <ion-menu-toggle auto-hide="false" v-for="(p, i) in appPages" :key="i">
               <ion-item @click="selectedIndex = i" router-direction="root" :router-link="p.url" lines="none" detail="false" class="hydrated" :class="{ selected: selectedIndex === i }">
@@ -52,47 +52,53 @@ export default defineComponent({
     IonRouterOutlet, 
     IonSplitPane,
   },
+  data(){
+    return{
+      current_time : "12:34"
+    }
+  },
   setup() {
     const selectedIndex = ref(0);
     const appPages = [
       {
-        title: 'Inbox',
-        url: '/folder/Inbox',
+        title: 'Basic calculator',
+        url: '/folder/Calculator',
         iosIcon: mailOutline,
         mdIcon: mailSharp
       },
       {
-        title: 'Outbox',
+        title: 'Binary converter',
         url: '/folder/Outbox',
         iosIcon: paperPlaneOutline,
         mdIcon: paperPlaneSharp
       },
       {
-        title: 'Favorites',
+        title: 'Currency Converter',
         url: '/folder/Favorites',
         iosIcon: heartOutline,
         mdIcon: heartSharp
       },
       {
-        title: 'Archived',
+        title: 'Time calculator',
         url: '/folder/Archived',
         iosIcon: archiveOutline,
         mdIcon: archiveSharp
       },
       {
-        title: 'Trash',
+        title: 'My Notes',
         url: '/folder/Trash',
         iosIcon: trashOutline,
         mdIcon: trashSharp
       },
       {
-        title: 'Spam',
+        title: 'Parameters',
         url: '/folder/Spam',
         iosIcon: warningOutline,
         mdIcon: warningSharp
       }
     ];
-    const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+    //const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+    const labels=['tool'];
     
     const path = window.location.pathname.split('folder/')[1];
     if (path !== undefined) {
