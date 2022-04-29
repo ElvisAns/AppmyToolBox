@@ -18,6 +18,24 @@
     
       <div id="container">
         <strong class="capitalize">{{ $route.params.id }}</strong>
+        
+          <ion-grid >
+            <ion-row>
+              <ion-col>
+                ion-col
+              </ion-col>
+              <ion-col>
+                ion-col
+              </ion-col>
+              <ion-col>
+                ion-col
+              </ion-col>
+              <ion-col>
+                ion-col
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
         <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
       </div>
     </ion-content>
