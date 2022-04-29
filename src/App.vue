@@ -34,7 +34,7 @@
 import { IonApp, IonContent, IonIcon, IonItem, IonLabel, IonList, IonListHeader, IonMenu, IonMenuToggle, IonNote, IonRouterOutlet, IonSplitPane } from '@ionic/vue';
 import { defineComponent, ref } from 'vue';
 import { useRoute } from 'vue-router';
-import { archiveOutline, archiveSharp, bookmarkOutline, bookmarkSharp, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import { cash,settingsSharp,pencilSharp,timeSharp,codeOutline,archiveOutline, archiveSharp, bookmarkOutline, bookmarkSharp, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp,calculatorOutline } from 'ionicons/icons';
 
 export default defineComponent({
   name: 'App',
@@ -63,38 +63,38 @@ export default defineComponent({
       {
         title: 'Basic calculator',
         url: '/tool/calculator',
-        iosIcon: mailOutline,
-        mdIcon: mailSharp
+        iosIcon: calculatorOutline,
+        mdIcon: calculatorOutline
       },
       {
         title: 'Binary converter',
         url: '/tool/binayconverter',
-        iosIcon: paperPlaneOutline,
-        mdIcon: paperPlaneSharp
+        iosIcon: codeOutline,
+        mdIcon: codeOutline
       },
       {
         title: 'Currency Converter',
         url: '/tool/currency',
-        iosIcon: heartOutline,
-        mdIcon: heartSharp
+        iosIcon: cash,
+        mdIcon: cash
       },
       {
         title: 'Time calculator',
         url: '/tool/time',
-        iosIcon: archiveOutline,
-        mdIcon: archiveSharp
+        iosIcon: timeSharp,
+        mdIcon: timeSharp
       },
       {
         title: 'My Notes',
         url: '/tool/notes',
-        iosIcon: trashOutline,
-        mdIcon: trashSharp
+        iosIcon: pencilSharp,
+        mdIcon: pencilSharp
       },
       {
         title: 'Parameters',
         url: '/tool/parameters',
-        iosIcon: warningOutline,
-        mdIcon: warningSharp
+        iosIcon: settingsSharp,
+        mdIcon: settingsSharp
       }
     ];
     //const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
@@ -227,6 +227,7 @@ ion-menu.ios ion-item ion-icon {
   color: #73849a;
 }
 
+
 ion-menu.ios ion-list#labels-list ion-list-header {
   margin-bottom: 8px;
 }
@@ -243,9 +244,13 @@ ion-menu.ios ion-note {
 
 ion-note {
   display: inline-block;
+  padding-top:10px;
   font-size: 16px;
-
   color: var(--ion-color-medium-shade);
+}
+
+ion-list-header{
+  color : var(--ion-color-primary);
 }
 
 ion-item.selected {
