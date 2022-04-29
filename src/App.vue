@@ -62,37 +62,37 @@ export default defineComponent({
     const appPages = [
       {
         title: 'Basic calculator',
-        url: '/folder/Calculator',
+        url: '/tool/calculator',
         iosIcon: mailOutline,
         mdIcon: mailSharp
       },
       {
         title: 'Binary converter',
-        url: '/folder/Outbox',
+        url: '/tool/binayconverter',
         iosIcon: paperPlaneOutline,
         mdIcon: paperPlaneSharp
       },
       {
         title: 'Currency Converter',
-        url: '/folder/Favorites',
+        url: '/tool/currency',
         iosIcon: heartOutline,
         mdIcon: heartSharp
       },
       {
         title: 'Time calculator',
-        url: '/folder/Archived',
+        url: '/tool/time',
         iosIcon: archiveOutline,
         mdIcon: archiveSharp
       },
       {
         title: 'My Notes',
-        url: '/folder/Trash',
+        url: '/tool/notes',
         iosIcon: trashOutline,
         mdIcon: trashSharp
       },
       {
         title: 'Parameters',
-        url: '/folder/Spam',
+        url: '/tool/parameters',
         iosIcon: warningOutline,
         mdIcon: warningSharp
       }
@@ -100,7 +100,7 @@ export default defineComponent({
     //const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
     const labels=['tool'];
     
-    const path = window.location.pathname.split('folder/')[1];
+    const path = window.location.pathname.split('tool/')[1];
     if (path !== undefined) {
       selectedIndex.value = appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
