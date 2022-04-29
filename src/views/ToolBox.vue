@@ -29,7 +29,7 @@ import { defineComponent } from 'vue';
 import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 
 export default defineComponent({
-  name: 'FolderPage',
+  name: 'ToolBox',
   components: {
     IonButtons,
     IonContent,
