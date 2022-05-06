@@ -18,24 +18,9 @@
     
       <div id="container">
         <strong class="capitalize">{{ $route.params.id }}</strong>
-        
-          <ion-grid >
-            <ion-row>
-              <ion-col>
-                ion-col
-              </ion-col>
-              <ion-col>
-                ion-col
-              </ion-col>
-              <ion-col>
-                ion-col
-              </ion-col>
-              <ion-col>
-                ion-col
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-
+        <div v-if="$route.params.id=='calculator'">
+          <ToolBasicCalculator />
+        </div>
         <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
       </div>
     </ion-content>
@@ -45,6 +30,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import ToolBasicCalculator from './Tool_Basic_Calculator.vue'
 
 export default defineComponent({
   name: 'ToolBox',
@@ -55,7 +41,8 @@ export default defineComponent({
     IonMenuButton,
     IonPage,
     IonTitle,
-    IonToolbar
+    IonToolbar,
+    ToolBasicCalculator
   }
 });
 </script>
