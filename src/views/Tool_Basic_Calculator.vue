@@ -1,7 +1,7 @@
 <template>
     <div class="container">
-        <div class="s"></div>
-        <div></div>
+        <div class="screen"></div>
+        <div class="keys"></div>
     </div>
 </template>
 
@@ -13,5 +13,13 @@ export default {
 </script>
 
 <style scoped>
-
+.container{
+    display: flex;
+    justify-content: center;
+}
+   .screen{
+       background-color: aqua;
+       height: 40px;
+       width:200px;
+   }
 </style>
