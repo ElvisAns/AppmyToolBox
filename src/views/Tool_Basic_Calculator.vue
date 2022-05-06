@@ -14,12 +14,20 @@ export default {
 
 <style scoped>
 .container{
+    margin:20px auto;
+    width:40vw;
     display: flex;
     justify-content: center;
+}
+
+@media screen and (max-width:800px){
+    .container{
+        width:80vw;
+    }
 }
    .screen{
        background-color: aqua;
        height: 40px;
-       width:200px;
+       width:100%;
    }
 </style>
