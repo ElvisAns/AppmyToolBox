@@ -14,7 +14,7 @@
                 <button class="r">CE</button>
                 <button>(</button>
                 <button>)</button>
-                <button>/</button>
+                <button class="o">/</button>
             </div>
 
 
@@ -23,14 +23,14 @@
                 <button>7</button>
                 <button>8</button>
                 <button>9</button>
-                <button>x</button>
+                <button class="o">x</button>
             </div>
             
             <div class="row">
                 <button>5</button>
                 <button>4</button>
                 <button>3</button>
-                <button>+</button>
+                <button class="o">+</button>
             </div>
 
             
@@ -38,7 +38,7 @@
                 <button>3</button>
                 <button>2</button>
                 <button>1</button>
-                <button>-</button>
+                <button class="o">-</button>
             </div>
 
             
@@ -46,7 +46,7 @@
                 <button>0</button>
                 <button>.</button>
                 <button>+/-</button>
-                <button>=</button>
+                <button class="e">=</button>
             </div>
         </div>
     </div>
@@ -102,12 +102,21 @@ export default {
        display: flex;
        width: auto;
    }
-   .a{
+   button.a{
        background-color:blue;
        color:white;
    }
-   .r{
+   button.r{
        background-color: rgb(255, 7, 32);
        color:white;
+   }
+   button.o{
+       
+       background-color: rgb(255, 166, 0);
+       color:white;
+   }
+   .e{
+       background-color: green;
+       color: white;
    }
 </style>
