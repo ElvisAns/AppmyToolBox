@@ -20,7 +20,6 @@
         <div v-if="$route.params.id=='calculator'">
           <ToolBasicCalculator />
         </div>
-        <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
       </div>
     </ion-content>
   </ion-page>
