@@ -115,8 +115,12 @@ export default {
        background-color: rgb(255, 166, 0);
        color:white;
    }
-   .e{
+   button.e{
        background-color: green;
        color: white;
+   }
+   button{
+       color:white;
+       background-color:rgb(106, 106, 234);
    }
 </style>
