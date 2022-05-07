@@ -4,14 +4,14 @@
         <div class="keys">
             <div class="row">
                 <button class="a">e</button>
-                <button>%</button>
-                <button>sin</button>
-                <button>deg</button>
+                <button class="a">%</button>
+                <button class="a">sin</button>
+                <button class="a">deg</button>
             </div>
 
             
             <div class="row">
-                <button>CE</button>
+                <button class="r">CE</button>
                 <button>(</button>
                 <button>)</button>
                 <button>/</button>
@@ -83,7 +83,7 @@ export default {
        padding:6px;
        text-align: center;
        margin:5px;
-       border-radius: 4px;
+       border-radius: 12px;
        width:calc(20vw/4);
        height: 40px;
    }
@@ -101,5 +101,13 @@ export default {
    .row{
        display: flex;
        width: auto;
+   }
+   .a{
+       background-color:blue;
+       color:white;
+   }
+   .r{
+       background-color: rgb(255, 7, 32);
+       color:white;
    }
 </style>
