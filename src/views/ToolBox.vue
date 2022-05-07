@@ -17,7 +17,6 @@
       </ion-header>
     
       <div id="container">
-        <strong class="capitalize">{{ $route.params.id }}</strong>
         <div v-if="$route.params.id=='calculator'">
           <ToolBasicCalculator />
         </div>

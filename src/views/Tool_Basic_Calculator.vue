@@ -3,7 +3,7 @@
         <div class="screen"></div>
         <div class="keys">
             <div class="row">
-                <button>e</button>
+                <button class="a">e</button>
                 <button>%</button>
                 <button>sin</button>
                 <button>deg</button>
@@ -60,22 +60,22 @@ export default {
 </script>
 
 <style scoped>
-.container{
-    margin:20px auto;
-    width:20vw;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
+    .container{
+        margin:20px auto;
+        width:20vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
 
     .container{
-        background-color: rgba(128, 66, 215,.3);
+        background-color: rgba(143, 132, 221, 0.535);
         padding:20px;
+        border-radius: 10px;
     }
    .screen{
-       background-color: rgb(255, 255, 255);
-       height: 40px;
+       background-color: transparent;
+       height: 80px;
        width:100%;
    }
 
