@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="screen"><div>909</div></div>
+        <div class="screen"><div>{{result}}</div></div>
         <div class="keys">
             <div class="row">
                 <button class="a">e</button>
@@ -55,7 +55,28 @@
 <script>
 
 export default {
-    name : "ToolBasicCalculator"
+    name : "ToolBasicCalculator",
+    data(){
+        return {
+            result:0.001,
+            opString:""
+        }
+    },
+    methods:{
+        handleButtonsClick(val){
+            if(val=="="){
+                this.result=eval(this.opString);
+                this.opString="";
+            }
+            else{
+                if(this.opString==""){
+                    if(val!=="+" | val!=="/" | val!=="*"){
+                        this.opString.concat(val);
+                    }
+                }
+            }
+        }
+    }
 }
 </script>
 
@@ -81,7 +102,7 @@ export default {
        padding:1rem;
        border-radius: 2px;
        text-align: right;
-       font-size: 3em;
+       font-size: 2.4em;
        color: antiquewhite;
        display:flex;
        align-items: center;
