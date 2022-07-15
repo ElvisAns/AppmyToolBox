@@ -75,14 +75,17 @@ export default {
     }
    .screen{
        background-color: blue;
-       height: 80px;
+       height: 120px;
        width:100%;
        margin:5px 3px 20px;
-       padding:3px;
+       padding:1rem;
        border-radius: 2px;
        text-align: right;
-       font-size: 2em;
+       font-size: 3em;
        color: antiquewhite;
+       display:flex;
+       align-items: center;
+       justify-content: end;
    }
 
    button{
