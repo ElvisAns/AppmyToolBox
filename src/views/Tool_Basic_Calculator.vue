@@ -86,6 +86,7 @@ export default {
        border-radius: 12px;
        width:calc(20vw/4);
        height: 40px;
+       box-shadow: 3px 6px #bdcdec;
    }
    
 @media screen and (max-width:800px){
