@@ -3,50 +3,50 @@
         <div class="screen"><div>{{result}}</div></div>
         <div class="keys">
             <div class="row">
-                <button class="a">e</button>
-                <button class="a">%</button>
-                <button class="a">sin</button>
-                <button class="a">deg</button>
+                <button @click="handleButtonsClick('exp')" class="a">e</button>
+                <button @click="handleButtonsClick('%')"  class="a">%</button>
+                <button @click="handleButtonsClick('sin')"  class="a">sin</button>
+                <button @click="handleButtonsClick('deg')"  class="a">deg</button>
             </div>
 
             
             <div class="row">
-                <button class="r">CE</button>
-                <button>(</button>
-                <button>)</button>
-                <button class="o">/</button>
+                <button @click="handleButtonsClick('clear')"  class="r">CE</button>
+                <button @click="handleButtonsClick('(')" >(</button>
+                <button @click="handleButtonsClick(')')" >)</button>
+                <button @click="handleButtonsClick('/')" class="o">/</button>
             </div>
 
 
             
             <div class="row">
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-                <button class="o">x</button>
+                <button @click="handleButtonsClick('7')" >7</button>
+                <button @click="handleButtonsClick('8')" >8</button>
+                <button @click="handleButtonsClick('9')" >9</button>
+                <button @click="handleButtonsClick('*')" class="o">x</button>
             </div>
             
             <div class="row">
-                <button>5</button>
-                <button>4</button>
-                <button>3</button>
-                <button class="o">+</button>
-            </div>
-
-            
-            <div class="row">
-                <button>3</button>
-                <button>2</button>
-                <button>1</button>
-                <button class="o">-</button>
+                <button @click="handleButtonsClick('5')" >5</button>
+                <button @click="handleButtonsClick('4')">4</button>
+                <button @click="handleButtonsClick('3')">3</button>
+                <button @click="handleButtonsClick('+')" class="o">+</button>
             </div>
 
             
             <div class="row">
-                <button>0</button>
-                <button>.</button>
-                <button>+/-</button>
-                <button class="e">=</button>
+                <button @click="handleButtonsClick('3')">3</button>
+                <button @click="handleButtonsClick('2')">2</button>
+                <button @click="handleButtonsClick('1')">1</button>
+                <button @click="handleButtonsClick('-')" class="o">-</button>
+            </div>
+
+            
+            <div class="row">
+                <button @click="handleButtonsClick('0')">0</button>
+                <button @click="handleButtonsClick('.')">.</button>
+                <button @click="handleButtonsClick('-')">+/-</button>
+                <button @click="handleButtonsClick('=')" class="e">=</button>
             </div>
         </div>
     </div>
@@ -65,12 +65,22 @@ export default {
     methods:{
         handleButtonsClick(val){
             if(val=="="){
-                this.result=eval(this.opString);
-                this.opString="";
+                let lastChar = this.opString.substr(this.opString.length,-1);
+                if(lastChar == "+" | lastChar == "-" | lastChar == "*" | lastChar == "/"){
+                    this.result="#INVALID";
+                    this.opString="";
+                }
+                else{
+                    this.result=eval(this.opString);
+                    this.opString="";
+                }
             }
             else{
                 if(this.opString==""){
-                    if(val!=="+" | val!=="/" | val!=="*"){
+                    if(val=="clear"){
+                        this.opString="";
+                    }
+                    if(val!=="+" & val!=="/" & val!=="*"){
                         this.opString.concat(val);
                     }
                 }
