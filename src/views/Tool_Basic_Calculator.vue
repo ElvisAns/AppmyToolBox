@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="screen"></div>
+        <div class="screen">909</div>
         <div class="keys">
             <div class="row">
                 <button class="a">e</button>
@@ -74,9 +74,12 @@ export default {
         border-radius: 10px;
     }
    .screen{
-       background-color: transparent;
+       background-color: blue;
        height: 80px;
        width:100%;
+       margin:5px 3px 20px;
+       padding:3px;
+       border-radius: 2px;
    }
 
    button{
