@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="screen">909</div>
+        <div class="screen"><div>909</div></div>
         <div class="keys">
             <div class="row">
                 <button class="a">e</button>
@@ -80,6 +80,9 @@ export default {
        margin:5px 3px 20px;
        padding:3px;
        border-radius: 2px;
+       text-align: right;
+       font-size: 2em;
+       color: antiquewhite;
    }
 
    button{
