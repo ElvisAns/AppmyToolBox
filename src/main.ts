@@ -20,6 +20,9 @@ import '@ionic/vue/css/text-alignment.css';
 import '@ionic/vue/css/text-transformation.css';
 import '@ionic/vue/css/flex-utils.css';
 import '@ionic/vue/css/display.css';
+import '@fontsource/montserrat/400.css';
+import '@fontsource/montserrat/900.css';
+import '@fontsource/montserrat/700.css';
 
 /* Theme variables */
 import './theme/variables.css';
