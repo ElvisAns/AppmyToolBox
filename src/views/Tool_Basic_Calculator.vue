@@ -75,7 +75,12 @@ export default {
                 }
                 else{
                     const tmp = eval(this.opString);
-                    this.result= parseFloat(tmp);
+                    const o = parseFloat(tmp);
+                    const l = o.toString();
+                    if(l.length>10)
+                        this.result=l.substr(0,10);
+                    else 
+                        this.result=o;
                     this.opString=this.result;
                 }
             }
