@@ -66,11 +66,6 @@ export default {
             history:[]
         }
     },
-    watch:{
-        history(Hnew){
-            localStorage.history=Hnew;
-        }
-    },
     methods:{
         handleButtonsClick(val){
             if(val=="="){
@@ -80,6 +75,7 @@ export default {
                     this.opString="";
                 }
                 else{
+                    const op = this.opString;
                     const tmp = eval(this.opString);
                     const o = parseFloat(tmp);
                     const l = o.toString();
@@ -88,7 +84,8 @@ export default {
                     else 
                         this.result=o;
                     this.opString=this.result;
-                    this.history.push([this.opString,this.result])
+                    this.history.push([op,this.result]);
+                    localStorage.history = JSON.stringify(this.history);
                 }
             }
             else{
