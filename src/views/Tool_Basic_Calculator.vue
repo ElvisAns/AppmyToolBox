@@ -1,6 +1,9 @@
 <template>
     <div class="container">
-        <div class="screen"><div>{{result}}</div></div>
+        <div class="screen">
+            <div>{{result}}<hr/></div>
+            <div class="sm">{{opString}}</div>
+        </div>
         <div class="keys">
             <div class="row">
                 <button @click="handleButtonsClick('exp')" class="a">e</button>
@@ -58,7 +61,7 @@ export default {
     name : "ToolBasicCalculator",
     data(){
         return {
-            result:0.001,
+            result:0,
             opString:""
         }
     },
@@ -72,18 +75,26 @@ export default {
                 }
                 else{
                     this.result=eval(this.opString);
-                    this.opString="";
+                    this.opString=this.result;
                 }
             }
             else{
                 if(this.opString==""){
                     if(val=="clear"){
-                        this.opString="";
+                        this.result="0";
+                        return;
                     }
                     if(val!=="+" & val!=="/" & val!=="*"){
-                        this.opString.concat(val);
+                        this.opString += String(val);
                     }
+                    return;
                 }
+                
+                if(val=="clear"){
+                    this.result="0";
+                    return;
+                }
+                this.opString += String(val);
             }
         }
     }
@@ -118,8 +129,15 @@ export default {
        align-items: center;
        justify-content: end;
        font-family: "Montserrat", sans-serif !important;
+       flex-direction: column;
    }
-
+   .screen > div{
+        width:100%;
+        padding-top:-20px;
+   }
+    hr{
+        border-top: 1px solid white;
+    }
    button{
        padding:6px;
        text-align: center;
@@ -164,5 +182,10 @@ export default {
    button{
        color:white;
        background-color:rgb(106, 106, 234);
+   }
+   .sm{
+    font-weight: 200;
+    font-size:small;
+    color:white;
    }
 </style>
