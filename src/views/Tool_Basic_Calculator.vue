@@ -56,9 +56,19 @@
 </template>
 
 <script>
+import {  
+  IonItem,
+  IonList, 
+  IonLabel 
+} from '@ionic/vue';
 
 export default {
     name : "ToolBasicCalculator",
+      components: { 
+        IonItem, 
+        IonList, 
+        IonLabel
+    },
     data(){
         return {
             result:0,
