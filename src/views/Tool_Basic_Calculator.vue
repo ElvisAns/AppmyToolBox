@@ -6,7 +6,7 @@
         </div>
         <div class="keys">
             <div class="row">
-                <button @click="handleButtonsClick('exp')" class="a">e</button>
+                <button @click="handleButtonsClick('del')" class="r">DEL</button>
                 <button @click="handleButtonsClick('%')"  class="a">%</button>
                 <button @click="handleButtonsClick('sin')"  class="a">sin</button>
                 <button @click="handleButtonsClick('deg')"  class="a">deg</button>
@@ -74,7 +74,8 @@ export default {
                     this.opString="";
                 }
                 else{
-                    this.result=eval(this.opString);
+                    const tmp = eval(this.opString);
+                    this.result= parseFloat(tmp);
                     this.opString=this.result;
                 }
             }
@@ -92,6 +93,10 @@ export default {
                 
                 if(val=="clear"){
                     this.result="0";
+                    return;
+                }
+                if(val=="del"){
+                    this.opString=this.opString.slice(0,-1);
                     return;
                 }
                 this.opString += String(val);
