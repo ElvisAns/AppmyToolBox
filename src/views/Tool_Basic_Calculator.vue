@@ -62,7 +62,13 @@ export default {
     data(){
         return {
             result:0,
-            opString:""
+            opString:"",
+            history:[]
+        }
+    },
+    watch:{
+        history(Hnew){
+            localStorage.history=Hnew;
         }
     },
     methods:{
@@ -82,6 +88,7 @@ export default {
                     else 
                         this.result=o;
                     this.opString=this.result;
+                    this.history.push([this.opString,this.result])
                 }
             }
             else{
