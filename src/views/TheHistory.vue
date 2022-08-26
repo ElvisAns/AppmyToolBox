@@ -32,7 +32,7 @@
   </ion-page>
 </template>
 
-<script lang="ts">
+<script>
   import {
     CheckboxCustomEvent,
     IonButtons,
@@ -43,13 +43,13 @@
     IonToolbar,
     IonTitle,
     IonItem,
-    IonCheckbox,
     IonLabel,
     IonPage,
   } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
+    name: "TheHistory",
     components: {
       IonButtons,
       IonButton,
@@ -59,7 +59,6 @@
       IonToolbar,
       IonTitle,
       IonItem,
-      IonCheckbox,
       IonLabel,
       IonPage,
     },
@@ -77,8 +76,8 @@
       dismiss() {
         this.$refs.modal.$el.dismiss();
       },
-      onTermsChanged(ev: CheckboxCustomEvent) {
-        this.canDismiss = ev.detail.checked;
+      onTermsChanged() {
+        this.canDismiss = CheckboxCustomEvent.detail.checked;
       },
     },
     mounted() {
