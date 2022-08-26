@@ -65,8 +65,11 @@ import {
 export default {
     name : "ToolBasicCalculator",
       components: { 
+        // eslint-disable-next-line vue/no-unused-components
         IonItem, 
+        // eslint-disable-next-line vue/no-unused-components
         IonList, 
+        // eslint-disable-next-line vue/no-unused-components
         IonLabel
     },
     data(){
